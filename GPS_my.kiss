@@ -1,0 +1,54 @@
+{
+	"name":"APP",
+	"class":"Startup",
+	"appName":"OpenKAI",
+	"bWindow":1,
+	"waitKey":30,
+	"presetDir":"/home/nvidia/src/OpenKAI/data/",
+}
+
+{
+	"name":"GPSwin",
+	"class":"Window",
+	"bInst":1,
+	"w":1280,
+	"h":720,
+	"bFullScreen":0,
+	"textX":20,
+	"textY":20,
+	"pixTab":20,
+	"lineH":20,
+}
+
+{
+	"name":"apSerialJetson",
+	"class":"_SerialPort",
+	"bInst":1,
+	"bLog":0,
+	"Window":"apView",
+	"portName":"/dev/ttyACM0",
+	"baud":115200,
+}
+{
+	"name":"apMavlink",
+	"class":"_Mavlink",
+	"bInst":1,
+	"bLog":1,
+	"FPS":100,
+	"Window":"apView",
+	"_IOBase":"apSerialJetson",
+}
+
+{
+	"name":"GPS_my",
+	"class":"_GPS_my",
+	"bInst":1,
+	"bLog":1,
+	"FPS":30,
+	"Window":"GPSwin",
+	"_Mavlink":"apMavlink",
+	"mavDSfreq":30,
+	"posDiffMax":0.5,
+}
+
+
