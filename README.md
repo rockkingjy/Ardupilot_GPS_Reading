@@ -5,7 +5,7 @@ Modify OpenKAI to read GPS data from pixhawk2 + Ardupilot + GPS/Compass.
 ```
 ll /dev
 ```
-to find the corrcet port name (in yy PC is ttyACM0, if use Jetson TX2, sometimes need to build kernel and ttyACM Module with Nvidia Jetson TX2 [web](www.jetsonhacks.com)), and modify GPS_my.kiss:
+to find the corrcet port name (in my PC is ttyACM0, if use Jetson TX2, sometimes need to build kernel and ttyACM Module with Nvidia Jetson TX2 [[web](www.jetsonhacks.com)]), and modify GPS_my.kiss:
 ```
 	"portName":"/dev/ttyACM0",
 	"baud":115200,
