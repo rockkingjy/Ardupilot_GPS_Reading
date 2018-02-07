@@ -1,4 +1,19 @@
-## OpenKAI_GPS_Reading
+## GPS_Reading
+
+### Use dronekit to read GPS
+Use [[dronekit](http://python.dronekit.io/guide/quick_start.html)] to read GPS data from pixhawk2 + Ardupilot + GPS/Compass.
+
+0. First connect with the PC or Jetson TX1/2 by USB port. Run 
+```
+ll /dev
+```
+to find the corrcet port name (ttyACM0).
+
+1. Install [[dronekit](http://python.dronekit.io/guide/quick_start.html)] according to the webpage.
+
+2. Run dronkit_getGPS.py
+
+### Use OpenKAI to read GPS
 Modify OpenKAI to read GPS data from pixhawk2 + Ardupilot + GPS/Compass.
 
 0. First connect with the PC or Jetson TX1/2 by USB port. Run 
