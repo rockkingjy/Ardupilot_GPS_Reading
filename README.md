@@ -1,10 +1,20 @@
 ## OpenKAI_GPS_Reading
 Modify OpenKAI to read GPS data from pixhawk2 + Ardupilot + GPS/Compass.
 
-
-## Add a class in OpenKAI
-
-Take the example of add _GPS_my.h in /OpenKAI/src/Navigation/:
+0. First connect with the PC or Jetson TX1/2 by USB port. Run 
+```
+ll /dev
+```
+to find the corrcet port name (in My PC is ttyACM0), and modify GPS_my.kiss:
+```
+	"portName":"/dev/ttyACM0",
+	"baud":115200,
+```
+If Connect with Jetson TX1/2 by TELEM1(not USB), then change to:
+```
+	"portName":"/dev/ttyTHS1",
+	"baud":921600,
+```
 
 1. Put the _GPS_my.cpp and _GPS_my.h in the folder /OpenKAI/src/Navigation/.
 
