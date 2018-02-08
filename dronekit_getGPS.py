@@ -2,7 +2,7 @@ import time
 import os.path
 from dronekit import Vehicle,connect
 
-#time.sleep(20)
+time.sleep(20)
 
 directory = "/home/nvidia/GPS/"
 ori = "/home/nvidia/GPS/gps.txt"
