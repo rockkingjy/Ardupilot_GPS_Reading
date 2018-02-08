@@ -2,7 +2,7 @@ import time
 import os.path
 from dronekit import Vehicle,connect
 
-#time.sleep(20)
+time.sleep(20)
 
 directory = "/home/nvidia/GPS/"
 ori = "/home/nvidia/GPS/gps.txt"
@@ -18,7 +18,7 @@ while os.path.isfile(ori):
 f = open(ori, 'a')
 print(ori + " created.")
 
-
+# sometimes the connection is not stable, and mounted as /dev/ttyACM1.
 portIndex = 0
 while(1):
     try:
@@ -42,7 +42,7 @@ while(1):
         f.write(str(current_millitime)+':'+str(lat)+','+str(lon)+','+str(heading)+'\n')
         f.flush()
         time.sleep(0.5)
-    else:
+    else: # disconnect and try to connect again, also it maybe reconnected as /dev/ttyACM1.
         vehicle.close()
         while(1):
             try:
