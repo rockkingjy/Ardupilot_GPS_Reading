@@ -2,7 +2,7 @@ import time
 import os.path
 from dronekit import Vehicle,connect
 
-time.sleep(20)
+#time.sleep(20)
 
 directory = "/home/nvidia/GPS/"
 ori = "/home/nvidia/GPS/gps.txt"
@@ -41,7 +41,7 @@ while(1):
         print(current_millitime,lat,lon,heading)
         f.write(str(current_millitime)+':'+str(lat)+','+str(lon)+','+str(heading)+'\n')
         f.flush()
-        time.sleep(0.5)
+        time.sleep(0.2)
     else: # disconnect and try to connect again, also it maybe reconnected as /dev/ttyACM1.
         vehicle.close()
         while(1):
